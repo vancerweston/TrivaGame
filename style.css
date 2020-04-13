@@ -59,7 +59,7 @@ h2 {
 form {
 	grid-column-start: 2;
 	grid-column-end: 4;
-	grid-row-start: 3;
+	grid-row-start: 4;
 	grid-row-end: 7; 
 	background-color: white;
     margin: auto auto auto auto;
@@ -78,6 +78,7 @@ form {
 
 #category, #diff {
 	font-size: 16px;
+	margin: 0 10px 0 10px;
 }
 
 #submit {
