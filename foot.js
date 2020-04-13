@@ -32,20 +32,25 @@ function choose() {
 
     function loadComplete(evt) {
         triviaData = JSON.parse(request.responseText);
+        console.log(triviaData);
 
         // Block 4: placing trivaData into HTML
 
         let i;
         let test = new Array(10);
+        try {
+            for (i = 0; i < test.length; i++) {
 
-        for (i = 0; i < test.length; i++) {
-
-            document.getElementById(`q${i}cat`).innerHTML = triviaData.results[i].category;
-            document.getElementById(`q${i}question`).innerHTML = triviaData.results[i].question;
-            document.getElementById(`q${i}correct`).innerHTML = triviaData.results[i].correct_answer;
-            document.getElementById(`q${i}wrong`).innerHTML = triviaData.results[i].incorrect_answers[0];
-            document.getElementById(`q${i}wrong2`).innerHTML = triviaData.results[i].incorrect_answers[1];
-            document.getElementById(`q${i}wrong3`).innerHTML = triviaData.results[i].incorrect_answers[2];
+                document.getElementById(`q${i}cat`).innerHTML = triviaData.results[i].category;
+                document.getElementById(`q${i}question`).innerHTML = triviaData.results[i].question;
+                document.getElementById(`q${i}correct`).innerHTML = triviaData.results[i].correct_answer;
+                document.getElementById(`q${i}wrong`).innerHTML = triviaData.results[i].incorrect_answers[0];
+                document.getElementById(`q${i}wrong2`).innerHTML = triviaData.results[i].incorrect_answers[1];
+                document.getElementById(`q${i}wrong3`).innerHTML = triviaData.results[i].incorrect_answers[2];
+            }
+        } catch {
+            console.log('If the alert error occurs the api has either changed or removed their selection. Would need to update the page.');
+            alert('OOPS! We\'re sorry! We apparently misplaced our questions for your selection. Reload the page and try again. If it still doesn\'t work, please select a different category/difficulty. Sorry for the inconvenience.');
         }
         console.log(triviaData);
     }
