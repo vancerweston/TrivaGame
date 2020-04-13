@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap" rel="stylesheet">
+    <link href='style.css' rel='stylesheet'>
+    <title>Trivia Time!</title>
+</head>
+
+<body>
+    <!--The id for each category starts at 9 and goes to 32-->
+    <main>
+        <div id='gameTitleDiv'>
+            <h1 id='gameTitle'>Trivia Time!</h1>
+        </div>
+        <form id='form'>
+            <div id='formDiv'>
+                <label id='categoryLabel' for="category">Choose a Category:</label>
+                <select id='category'>
+                    <option class='option1' value='0'>Any Category</option>
+                    <option class='option1' value='9'>General Knowledge</option>
+                    <option class='option1' value='10'>Entertainment: Books</option>
+                    <option class='option1' value='11'>Entertainment: Films</option>
+                    <option class='option1' value='12'>Entertainment: Music</option>
+                    <option class='option1' value='13'>Entertainment: Musicals & Theatres</option>
+                    <option class='option1' value='14'>Entertainment: Television</option>
+                    <option class='option1' value='15'>Entertainment: Video Games</option>
+                    <option class='option1' value='16'>Entertainment: Board Games</option>
+                    <option class='option1' value='17'>Science & Nature</option>
+                    <option class='option1' value='18'>Science: Computers</option>
+                    <option class='option1' value='19'>Science: Mathmatics</option>
+                    <option class='option1' value='20'>Mythology</option>
+                    <option class='option1' value='21'>Sports</option>
+                    <option class='option1' value='22'>Geography</option>
+                    <option class='option1' value='23'>History</option>
+                    <option class='option1' value='24'>Politics</option>
+                    <option class='option1' value='25'>Art</option>
+                    <option class='option1' value='26'>Celebrities</option>
+                    <option class='option1' value='27'>Animals</option>
+                    <option class='option1' value='28'>Vehicles</option>
+                    <option class='option1' value='29'>Entertainment: Comics</option>
+                    <option class='option1' value='30'>Science: Gadgets</option>
+                    <option class='option1' value='31'>Entertainment: Japanese Anime & Manga</option>
+                    <option class='option1' value='32'>Entertainment: Cartoon & Animations</option>
+                </select>
+                <br /><br />
+                <label id='diffLabel' for='difficulty'>Choose a Difficulty:</label>
+                <select id='diff'>
+                    <option class='option2' value=''>Any Difficulty</option>
+                    <option class='option2' value='easy'>Easy</option>
+                    <option class='option2' value='medium'>Medium</option>
+                    <option class='option2' value='hard'>Hard</option>
+                </select>
+                <br /><br />
+                <input id='submit' type='submit' value="Let's play" onClick='choose()'>
+            </div>
+        </form>
+        <div id='questions'>
+            <div id='q1'>
+                <div id='q0cat'></div>
+                <div id='q0question'></div>
+                <div id='q0wrong' onClick='q2display()'></div>
+                <div id='q0correct' onClick='q2display()'></div>
+                <div id='q0wrong2' onClick='q2display()'></div>
+                <div id='q0wrong3' onClick='q2display()'></div>
+            </div>
+            <div id='q2'>
+                <div id='q1cat'></div>
+                <div id='q1question'></div>
+                <div id='q1correct' onClick='q3display()'></div>
+                <div id='q1wrong' onClick='q3display()'></div>
+                <div id='q1wrong2' onClick='q3display()'></div>
+                <div id='q1wrong3' onClick='q3display()'></div>
+            </div>
+            <div id='q3'>
+                <div id='q2cat'></div>
+                <div id='q2question'></div>
+                <div id='q2wrong' onClick='q4display()'></div>
+                <div id='q2wrong2' onClick='q4display()'></div>
+                <div id='q2correct' onClick='q4display()'></div>
+                <div id='q2wrong3' onClick='q4display()'></div>
+            </div>
+            <div id='q4'>
+                <div id='q3cat'></div>
+                <div id='q3question'></div>
+                <div id='q3correct' onClick='q5display()'></div>
+                <div id='q3wrong' onClick='q5display()'></div>
+                <div id='q3wrong2' onClick='q5display()'></div>
+                <div id='q3wrong3' onClick='q5display()'></div>
+            </div>
+            <div id='q5'>
+                <div id='q4cat'></div>
+                <div id='q4question'></div>
+                <div id='q4wrong' onClick='q6display()'></div>
+                <div id='q4wrong2' onClick='q6display()'></div>
+                <div id='q4wrong3' onClick='q6display()'></div>
+                <div id='q4correct' onClick='q6display()'></div>
+            </div>
+            <div id='q6'>
+                <div id='q5cat'></div>
+                <div id='q5question'></div>
+                <div id='q5wrong' onClick='q7display()'></div>
+                <div id='q5correct' onClick='q7display()'></div>
+                <div id='q5wrong2' onClick='q7display()'></div>
+                <div id='q5wrong3' onClick='q7display()'></div>
+            </div>
+            <div id='q7'>
+                <div id='q6cat'></div>
+                <div id='q6question'></div>
+                <div id='q6wrong' onClick='q8display()'></div>
+                <div id='q6wrong2' onClick='q8display()'></div>
+                <div id='q6correct' onClick='q8display()'></div>
+                <div id='q6wrong3' onClick='q8display()'></div>
+            </div>
+            <div id='q8'>
+                <div id='q7cat'></div>
+                <div id='q7question'></div>
+                <div id='q7correct' onClick='q9display()'></div>
+                <div id='q7wrong' onClick='q9display()'></div>
+                <div id='q7wrong2' onClick='q9display()'></div>
+                <div id='q7wrong3' onClick='q9display()'></div>
+            </div>
+            <div id='q9'>
+                <div id='q8cat'></div>
+                <div id='q8question'></div>
+                <div id='q8wrong' onClick='q10display()'></div>
+                <div id='q8wrong2' onClick='q10display()'></div>
+                <div id='q8wrong3' onClick='q10display()'></div>
+                <div id='q8correct' onClick='q10display()'></div>
+            </div>
+            <div id='q10'>
+                <div id='q9cat'></div>
+                <div id='q9question'></div>
+                <div id='q9wrong' onClick='end()'></div>
+                <div id='q9correct' onClick='end()'></div>
+                <div id='q9wrong2' onClick='end()'></div>
+                <div id='q9wrong3' onClick='end()'></div>
+            </div>
+            <div id='end'>
+                <div id='gameScoreDiv'>
+                    <h2>Your Score:</h2>
+                    <h2 id='gameScore'>0</h2>
+                </div>
+            </div>
+    </main>
+</body>
+<script type="text/javascript" src='foot.js'></script>
+
+</html>
